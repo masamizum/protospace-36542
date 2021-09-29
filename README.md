@@ -13,9 +13,8 @@
 
 ### Association
 
-- has_many :room_users
-- has_many :rooms, through: :room_users
-- has_many :messages
+- has_many :prototypes
+- has_many :comments
 
 ## phototype テーブル
 
@@ -24,36 +23,22 @@
 | title              | string       | null: false                    |
 | catch_copy         | text         | null: false                    |
 | concept            | text         | null: false                    |
-| image              |              | ActiveStrage                   |
 | user               | references   | null: false, foreign_key: true |
 
 ### Association
 
-- has_many :room_users
-- has_many :rooms, through: :room_users
-- has_many :messages
+- belongs_to :user
+- has_many :comments
 
 ## comments テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| room   | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| text      | text       | null: false                    |
+| user      | references | null: false                    |
+| prototype | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :room
-- belongs_to :users
-
-## message テーブル
-
-| Column  | TYpe       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| content | string     |                                |
-| users   | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :room
-- belongs_to :users
+- belongs_to :user
+- belongs_to :prototype
