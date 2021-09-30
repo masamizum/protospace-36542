@@ -38,8 +38,8 @@ class PrototypesController < ApplicationController
 
     unless @prototype.user_id == current_user.id
       #redirect_to prototype_path
-      #redirect_to root_path
-      redirect_to action: :index
+      redirect_to root_path
+      #redirect_to action: :index
     end
   end
 
