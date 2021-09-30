@@ -16,7 +16,7 @@
 - has_many :prototypes
 - has_many :comments
 
-## phototype テーブル
+## prototype テーブル
 
 | Column             | Type         | Options                        |
 | ------------------ | ------------ | ------------------------------ |
